@@ -1,0 +1,244 @@
+{
+  "await": {
+    "prefix": "await",
+    "body": "await ${0};"
+  },
+  "await sleep": {
+    "prefix": "await sleep",
+    "body": "await new Promise((r) => setTimeout(r, ${0:delay}));"
+  },
+  "new Promise": {
+    "prefix": "new promise",
+    "body": "new Promise((resolve, reject) => {\n\t${0:// code...}\n});"
+  },
+  "require": {
+    "prefix": ["require module", "req"],
+    "body": "require('${0:module}');"
+  },
+  "const module = require('module')": {
+    "prefix": ["cr=", "const module require"],
+    "body": "const ${0:name} = require('${1:module}');"
+  },
+  "module.exports": {
+    "prefix": "module export",
+    "body": "module.exports = ${0:name};"
+  },
+  "dom event cancel default": {
+    "prefix": "event - prevent",
+    "body": "${0:event}.preventDefault();"
+  },
+  "addEventListener": {
+    "prefix": "event - attach",
+    "body": "${1:element}.addEventListener('${2:event}', (${3:event}) => {\n\t${0:// code...}\n});"
+  },
+  "getElementById": {
+    "prefix": "document get by id",
+    "body": "document.getElementById('${0:id}');"
+  },
+  "querySelector": {
+    "prefix": ["qs", "document query selector"],
+    "body": "document.querySelector('${0:selector}');"
+  },
+  "querySelectorAll": {
+    "prefix": ["qsa", "document query all"],
+    "body": "document.querySelectorAll('${0:selector}'));"
+  },
+  "forEach loop": {
+    "prefix": "fore",
+    "body": "${1:iterable}.forEach((${2:item}) => {\n\t${0}\n});"
+  },
+  "higher order method": {
+    "prefix": ["fh","function - high order method"],
+    "body": "${1:name}.${2:method}((${3:arg}) => {\n\t${0}\n});"
+  },
+  "var assignment": {
+    "prefix": "v=",
+    "body": "var ${1:name} = ${0:value};"
+  },
+  "let assignment": {
+    "prefix": "l=",
+    "body": "let ${1:name} = ${0:value};"
+  },
+  "const assignment": {
+    "prefix": "c=",
+    "body": "const ${1:name} = ${0:value};"
+  },
+  "class": {
+    "prefix": "class",
+    "body": "class ${1:name} {\n\tconstructor (${2:arguments}) {\n\t\t${0}\n\t}\n}"
+  },
+  "import module default": {
+    "prefix": ["im", "import default"],
+    "body": "import ${0:name} from '${1:module}';"
+  },
+  "import all as": {
+    "prefix": "import all as",
+    "body": "import * as ${0:name} from '${1:module}';"
+  },
+  "import named exports": {
+    "prefix": "import named exports",
+    "body": "import { $0 } from '${1:module}';"
+  },
+  "if statement": {
+    "prefix": "if",
+    "body": "if (${1:condition}) {\n\t${0}\n}"
+  },
+  "else statement": {
+    "prefix": ["el", "else"],
+    "body": "else {\n\t${0}\n}"
+  },
+  "else if statement": {
+    "prefix": ["elseif", "elif"],
+    "body": "else if (${1:condition}) {\n\t${0}\n}"
+  },
+  "try/catch": {
+    "prefix": "try",
+    "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}"
+  },
+  "anonymous function": {
+    "prefix": ["ff", "function - anonymous"],
+    "body": "function(${1:arguments}) {\n\t${0:// code...}\n}"
+  },
+  "async anonymous function": {
+    "prefix": "async - anonymous function",
+    "body": "async function(${1:arguments}) {\n\t${0:// code...}\n}"
+  },
+  "named function": {
+    "prefix": ["fun", "function - named"],
+    "body": "function ${1:name}(${2:arguments}) {\n\t${0:// code...}\n}"
+  },
+  "async arrow function": {
+    "prefix": "async - arrow function",
+    "body": "async (${1:arguments}) => {\n\t${0:// code...}\n}"
+  },
+  "immediately-invoked function expression": {
+    "prefix": "iife",
+    "body": "(function (${1:arguments}) {\n\t${0}\n})();"
+  },
+  "async immediately-invoked function expression": {
+    "prefix": "async - iife",
+    "body": "(async (${1:arguments}) => {\n\t${0}\n})();"
+  },
+  "lambda function": {
+    "prefix": ["lf", "function - lambda"],
+    "body": "(${1:arguments}) => ${0:statement}"
+  },
+  "arrow function": {
+    "prefix": ["af", "arrow function"],
+    "body": "(${1:arguments}) => {\n\t${0:// code...}\n}"
+  },
+  "console.log": {
+    "prefix": "con",
+    "body": "console.log(${0})"
+  },
+  "console.log a variable": {
+    "prefix": "conv",
+    "body": "console.log('${1:label}:', ${0:value})"
+  },
+  "JSON.stringify()": {
+    "prefix": ["jss", "json stringify"],
+    "body": "JSON.stringify($0)"
+  },
+  "JSON.parse()": {
+    "prefix": ["jsp", "json stringify, but make it pretty"],
+    "body": "JSON.stringify($0, null, 2)"
+  },
+  "method": {
+    "prefix": "function method",
+    "body": "${1:method}(${2:arguments}) {\n\t${0:// code...}\n}"
+  },
+  "ternary": {
+    "prefix": "if?",
+    "body": "${1:cond} ? ${2:true} : ${3:false}"
+  },
+  "return": {
+    "prefix": "ret",
+    "body": "return ${0};"
+  },
+  "return new object": {
+    "prefix": "reto",
+    "body": "return {\n\t${0}\n};"
+  },
+  "return new array": {
+    "prefix": "reta",
+    "body": "return [\n\t${0}\n];"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+      "\tconst ${3:element} = ${2:array}[${1:index}];",
+      "\t$0",
+      "}"
+    ],
+    "description": "For Loop"
+  },
+  "For-In Loop": {
+    "prefix": "forin",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "\tif (${2:object}.hasOwnProperty(${1:key})) {",
+      "\t\tconst ${3:element} = ${2:object}[${1:key}];",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "For-In Loop"
+  },
+  "For-Of Loop": {
+    "prefix": "forof",
+    "body": ["for (const ${1:iterator} of ${2:object}) {", "\t$0", "}"],
+    "description": "For-Of Loop"
+  },
+  "If-Else Statement": {
+    "prefix": ["ifelse", "ifel"],
+    "body": ["if (${1:condition}) {", "\t$0", "} else {", "\t", "}"],
+    "description": "If-Else Statement"
+  },
+  "Switch Statement": {
+    "prefix": ["sw", "switch"],
+    "body": [
+      "switch (${1:key}) {",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Switch Statement"
+  },
+  "While Statement": {
+    "prefix": "while",
+    "body": ["while (${1:condition}) {", "\t$0", "}"],
+    "description": "While Statement"
+  },
+  "Case Statement": {
+    "prefix": "case",
+    "body": [
+      "case ${1:value}:",
+      "\t\t$0",
+      "\t\tbreak;"
+    ]
+  },
+  "Do-While Statement": {
+    "prefix": "dowhile",
+    "body": ["do {", "\t$0", "} while (${1:condition});"],
+    "description": "Do-While Statement"
+  },
+  "Log warning to console": {
+    "prefix": "warn",
+    "body": ["console.warn($0);"],
+    "description": "Log warning to the console"
+  },
+  "Log error to console": {
+    "prefix": "error",
+    "body": ["console.error($0);"],
+    "description": "Log error to the console"
+  },
+  "Inline object literal": {
+    "prefix": "od",
+    "body": "{ $0 }"
+  }
+}

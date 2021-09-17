@@ -1,0 +1,76 @@
+{
+  "name": "the-good-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/cpp.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact"
+        ],
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "php",
+        "path": "./snippets/php.json"
+      },
+      {
+        "language": "lua",
+        "path": "./snippets/lua.json"
+      },
+      {
+        "language": "rust",
+        "path": "./snippets/rust.json"
+      },
+      {
+        "language": "sql",
+        "path": "./snippets/sql.json"
+      },
+      {
+        "language": [
+          "shellscript",
+          "shell",
+          "sh",
+          "bash",
+          "zsh"
+        ],
+        "path": "./snippets/shell.json"
+      },
+      {
+        "language": [
+          "html",
+          "jade",
+          "pug",
+          "twig",
+          "html.twig",
+          "vue"
+        ],
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/markdown.json"
+      },
+      {
+        "language": [
+          "twig",
+          "html.twig"
+        ],
+        "path": "./snippets/twig.json"
+      }
+    ]
+  }
+}

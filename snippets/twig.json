@@ -1,0 +1,94 @@
+{
+  "block": {
+    "prefix": "block",
+    "body": "{% block ${1:name} %}\n\t$0\n{% endblock %}",
+    "description": "block (block)"
+  },
+  "blockf": {
+    "prefix": "blockf",
+    "body": "{{ block(\"${1:name}\") }}$0",
+    "description": "blockf"
+  },
+  "split": {
+    "prefix": "split",
+    "body": "{{ ${1:$TM_SELECTED_TEXT} | split(\"\\n\") }}$0",
+    "description": "split on | split (\"\\n\")"
+  },
+  "dd": {
+    "prefix": "dd",
+    "body": "<pre>\n\t{{ dump($1) }}\n</pre>\n{% exit %}$0",
+    "description": "dump and die"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "{% else %}\n\t$0",
+    "description": "else"
+  },
+  "endblock": {
+    "prefix": "endblock",
+    "body": "{% endblock %}$0",
+    "description": "endblock"
+  },
+  "endfor": {
+    "prefix": "endfor",
+    "body": "{% endfor %}$0",
+    "description": "endfor"
+  },
+  "endif": {
+    "prefix": "endif",
+    "body": "{% endif %}$0",
+    "description": "endif"
+  },
+  "extends": {
+    "prefix": "extends",
+    "body": "{% extends \"${1:template}\" %}$0",
+    "description": "extends"
+  },
+  "fore": {
+    "prefix": "fore",
+    "body":
+    "{% for ${1:item} in ${2:items} %}\n\t$3\n{% else %}\n\t$0\n{% endfor %}",
+    "description": "for ... else"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "{% for ${1:item} in ${2:items} %}\n\t$0\n{% endfor %}",
+    "description": "for"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "{% if ${1:condition} %}$0{% endif %}\n",
+    "description": "if"
+  },
+  "ifb": {
+    "prefix": "ifb",
+    "body": "{% if ${1:condition} %}\n\t$0\n{% endif %}",
+    "description": "if (block)"
+  },
+  "ife": {
+    "prefix": "ifelse",
+    "body": "{% if ${1:condition} %}\n\t$2\n{% else %}\n\t$0\n{% endif %}",
+    "description": "if ... else"
+  },
+  "include": {
+    "prefix": "include",
+    "body": "{% include \"${0:template}\" %}",
+    "description": "include"
+  },
+  "set": {
+    "prefix": "set",
+    "body": "{% set ${1:var} = ${0:value} %}",
+    "description": "set"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body":
+    "{% switch ${1:variable} %}\n\n\t{% case \"${2:value1}\" %}\n\t\n\n\t{% case \"${3:value2}\" %}\n\t\n\n\t{% default %}\n\t\n\n{% endswitch %}\n$0",
+    "description": "switch"
+  },
+  "verbatim": {
+    "prefix": "verbatim",
+    "body": "{% verbatim %}\n\t$0\n{% endverbatim %}",
+    "description": "verbatim"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "require": {
+    "prefix": "req",
+    "body": ["require '${1:module}'"],
+    "description": "Require module"
+  },
+  "return": {
+    "prefix": "ret",
+    "body": ["return $0"],
+    "description": "return value"
+  },
+  "assigment": {
+    "prefix": "ll",
+    "body": ["local ${1:name} = ${0:value}"],
+    "description": "create a variable"
+  },
+  "local require": {
+    "prefix": "req=",
+    "body": ["local ${0:name} = require '${1:module}'"],
+    "description": "Require module as a variable"
+  },
+  "class": {
+    "prefix": "class",
+    "body": [
+      "${1:className} = {}\n",
+      "$1.${2:new} = function($3)",
+      "\tlocal ${4:varName} = ${5:{}}\n",
+      "\t${0: --code}\n",
+      "\treturn $4",
+      "end"
+    ],
+    "description": "Create a class"
+  },
+  "if": {
+    "prefix": "if",
+    "body": ["if ${1:true} then", "\t$0", "end"]
+  },
+  "elseif": {
+    "prefix": ["elseif", "elif"],
+    "body": ["elseif ${1:true} then", "\t$0"]
+  },
+  "for": {
+    "prefix": "for",
+    "body": ["for ${1:i}=${2:1},${3:10} do", "\t$0", "end"],
+    "description": "for loop range"
+  },
+  "foreach": {
+    "prefix": "foreach",
+    "body": ["for i, ${1:x} in pairs(${2:table}) do", "\t$0", "end"]
+  },
+  "forline": {
+    "prefix": "forline",
+    "body": [
+      "f = io.open(${1:\"${2:filename}\"}, \"${3:r}\")\n",
+      "while true do",
+      "\tline = f:read()",
+      "\tif line == nil then break end\n",
+      "\t${0:-- code}",
+      "end"
+    ],
+    "description": "read file line by line"
+  },
+  "function": {
+    "prefix": "fun",
+    "body": ["function ${1:name}($2)", "\t${0:-- code}", "end"]
+  },
+  "inline-function": {
+    "prefix": "lf",
+    "body": ["local ${1:name} = function($2)", "\t${0:-- code}", "end"]
+  },
+  "print": {
+    "prefix": "pr",
+    "body": ["print(${0})"]
+  },
+  "self": {
+    "prefix": "self:",
+    "body": ["function self:${1:methodName}($2)", "\t$0", "end"]
+  },
+  "while": {
+    "prefix": "while",
+    "body": ["while ${1:true} do", "\t$0", "end"]
+  },
+  "anonymous-function": {
+    "prefix": "ff",
+    "body": ["function($1)", "\t${0:-- code}", "end"]
+  }
+}

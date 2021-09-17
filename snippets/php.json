@@ -1,0 +1,189 @@
+{
+  "class …": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} ${2:extends ${3:AnotherClass}} ${4:implements ${5:Interface}}",
+      "{",
+      "\t$0",
+      "}",
+      ""
+    ],
+    "description": "Class definition"
+  },
+  "function __construct": {
+    "prefix": "con",
+    "body": [
+      "${1:public} function __construct(${2:${3:Type} \\$${4:var}${5: = ${6:null}}}) {",
+      "\t\\$this->${4:var} = \\$${4:var};$0",
+      "}"
+    ]
+  },
+  "function …": {
+    "prefix": "pfun",
+    "body": [
+      "${1:public }function ${2:FunctionName}(${3:${4:${5:Type} }\\$${6:var}${7: = ${8:null}}})",
+      "{",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Function"
+  },
+  "do … while …": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t${0:# code...}",
+      "} while (${1:\\$${2:a} <= ${3:10}});"
+    ],
+    "description": "Do-While loop"
+  },
+  "while …": {
+    "prefix": "while",
+    "body": ["while (${1:\\$${2:a} <= ${3:10}}) {", "\t${0:# code...}", "}"],
+    "description": "While-loop"
+  },
+  "if …": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t${0:# code...}", "}"],
+    "description": "If block"
+  },
+  "if … else …": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition}) {",
+      "\t${2:# code...}",
+      "} else {",
+      "\t${3:# code...}",
+      "}",
+      "$0"
+    ],
+    "description": "If Else block"
+  },
+  "$… = ( … ) ? … : …": {
+    "prefix": "if?",
+    "body": "\\$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b} ;",
+    "description": "Ternary conditional assignment"
+  },
+  "else …": {
+    "prefix": "else",
+    "body": ["else {", "\t${0:# code...}", "}"],
+    "description": "Else block"
+  },
+  "elseif …": {
+    "prefix": "elseif",
+    "body": ["elseif (${1:condition}) {", "\t${0:# code...}", "}"],
+    "description": "Elseif block"
+  },
+  "for …": {
+    "prefix": "for",
+    "body": [
+      "for (\\$${1:i}=${2:0}; \\$${1:i} < $3; \\$${1:i}++) { ",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "For-loop"
+  },
+  "foreach …": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (\\$${1:variable} as \\$${2:key} ${3:=> \\$${4:value}}) {",
+      "\t${0:# code...}",
+      "}"
+    ],
+    "description": "Foreach loop"
+  },
+  "$… = array (…)": {
+    "prefix": "array",
+    "body": "\\$${1:arrayName} = array('$2' => $3${4:,} $0);",
+    "description": "Array initializer"
+  },
+  "$… = […]": {
+    "prefix": "shorray",
+    "body": "\\$${1:arrayName} = ['$2' => $3${4:,} $0];",
+    "description": "Array initializer"
+  },
+  "… => …": {
+    "prefix": "keyval",
+    "body": "'$1' => $2${3:,} $0",
+    "description": "Key-Value initializer"
+  },
+  "switch …": {
+    "prefix": "switch",
+    "body": [
+      "switch (\\$${1:variable}) {",
+      "\tcase '${2:value}':",
+      "\t\t${3:# code...}",
+      "\t\tbreak;",
+      "\t$0",
+      "\tdefault:",
+      "\t\t${4:# code...}",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Switch block"
+  },
+  "case …": {
+    "prefix": "case",
+    "body": ["case '${1:value}':", "\t${0:# code...}", "\tbreak;"],
+    "description": "Case Block"
+  },
+  "$this->…": {
+    "prefix": "this",
+    "body": "\\$this->$0;",
+    "description": "$this->..."
+  },
+  "echo $this->…": {
+    "prefix": "ethis",
+    "body": "echo \\$this->$0;",
+    "description": "Echo this"
+  },
+  "Throw Exception": {
+    "prefix": "throw",
+    "body": [
+      "throw new $1Exception(${2:\"${3:Error Processing Request}\"}${4:, ${5:1}});",
+      "$0"
+    ],
+    "description": "Throw exception"
+  },
+  "Try Catch Block": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1://code...}",
+      "} catch (${2:\\Throwable} ${3:\\$th}) {",
+      "\t${4://throw \\$th;}",
+      "}"
+    ],
+    "description": "Try catch block"
+  },
+  "json-encode": {
+    "prefix": "jd",
+    "description": "Inspect data with json_encode",
+    "body": "echo json_encode($0); die();"
+  },
+  "vardump": {
+    "prefix": "vd",
+    "description": "Inspect data with var_dump",
+    "body": "echo var_dump($0); die();"
+  },
+  "die-and-dump": {
+    "prefix": "dd",
+    "description": "Inspect data with dd",
+    "body": "dd($0);"
+  },
+  "function": {
+    "prefix": "pfun",
+    "description": "create public function",
+    "body": [
+      "${1:public} function ${2:name}($3)",
+      "{",
+      "\t${0:// code...}",
+      "}"
+    ]
+  },
+  "identifier": {
+    "prefix": "ll",
+    "description": "variable definition",
+    "body": ["\\$${1:var} = ${0:value};"]
+  }
+}

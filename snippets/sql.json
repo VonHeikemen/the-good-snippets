@@ -1,0 +1,154 @@
+{
+  "createt": {
+    "prefix": "createt",
+    "body": ["CREATE TABLE IF NOT EXISTS ${1:tableName} (",
+      "\t${2:attribute(s)}",
+      ");"
+    ],
+    "description": "Create table with conditional"
+  },
+  "created": {
+    "prefix": "created",
+    "body": ["CREATE DATABASE IF NOT EXISTS ${1:name};"],
+    "description": "Create table with conditional"
+  },
+  "insert": {
+    "prefix": "insert",
+    "body": ["INSERT INTO ${1:tableName} (",
+      "\t${2:attribute(s)}", ") VALUES ( ${0:values} )"
+    ],
+    "description": "Insert value(s)"
+  },
+  "dropt": {
+    "prefix": "dropt",
+    "body": ["DROP TABLE ${1:tableName};"],
+    "description": "Drop table"
+  },
+  "dropd": {
+    "prefix": "dropd",
+    "body": ["DROP DATABASE ${1:dbName};"],
+    "description": "Drop database"
+  },
+  "select": {
+    "prefix": "select",
+    "body": ["SELECT ${1:attribute(s)} FROM ${2:tableName};"],
+    "description": "Regular select"
+  },
+  "selectd": {
+    "prefix": "selectd",
+    "body": ["SELECT DISTINCT ${1:attribute(s)}", "\tFROM ${2:tableName};"],
+    "description": "Select Distinct"
+  },
+  "where": {
+    "prefix": "where",
+    "body": "\tWHERE ${0:condition};",
+    "description": "Where condition"
+  },
+  "selector": {
+    "prefix": "order",
+    "body": "ORDER BY ${1:attribute(s)} ${0:ASC|DESC};",
+    "description": "order query"
+  },
+  "updatet": {
+    "prefix": "updatet",
+    "body": ["UPDATE ${1:tableName}","\tSET ${2:attribute(s)}",
+      "\tWHERE ${3:condition};"
+    ],
+    "description": "Update table"
+  },
+  "delete": {
+    "prefix": "delete",
+    "body": ["DELETE FROM ${1:tableName}", "\tWHERE ${3:condition};"],
+    "description": "Delete records"
+  },
+  "altert": {
+    "prefix": "altert",
+    "body": ["ALTER TABLE ${1:tableName}", "\t ${2:intructions};"],
+    "description": "Alter table"
+  },
+  "alterad": {
+    "prefix": "addc",
+    "body": "ADD COLUMN ${0:col_name};",
+    "description": "Add column"
+  },
+  "alteraf": {
+    "prefix": "after",
+    "body": "AFTER ${5:col_name};",
+    "description": "Add column after"
+  },
+  "alterdb": {
+    "prefix": "alterdb",
+    "body": ["ALTER DATABASE ${1:dbName}", "\tCHARACTER SET ${2:charset}",
+      "\tCOLLATE ${3:utf8_unicode_ci};"
+    ],
+    "description": "Alter database"
+  },
+  "ijoin": {
+    "prefix": "ijoin",
+    "body": "INNER JOIN ${1:tableName2}", "\tON ${0:match};",
+    "description": "Inner Join"
+  },
+  "rjoin": {
+    "prefix": "rjoin",
+    "body": "RIGHT JOIN ${1:tableName2}", "\tON ${0:match};",
+    "description": "Right Join"
+  },
+  "ljoin": {
+    "prefix": "ljoin",
+    "body": "LEFT JOIN ${1:tableName2}", "\tON ${0:match};",
+    "description": "Left Join"
+  },
+  "fjoin": {
+    "prefix": "fjoin",
+    "body": [
+      "FULL JOIN OUTER ${1:tableName2}", "\tON ${2:match}",
+      "\tWHERE ${0:condition};"
+    ],
+    "description": "Full Join"
+  },
+  "union": {
+    "prefix": "union",
+    "body": [
+      "UNION",
+      "SELECT ${1:attribute(s)} FROM ${0:tableName2};"
+    ],
+    "description": "Regular union"
+  },
+  "groupb": {
+    "prefix": "group",
+    "body": "GROUP BY ${3:attribute(s)};",
+    "description": "Group by"
+  },
+  "primaryk": {
+    "prefix": "primaryk",
+    "body": ["PRIMARY KEY(${1:attribute})"],
+    "description": "Primary Key"
+  },
+  "primarykc": {
+    "prefix": "primarykc",
+    "body": ["CONSTRAINT ${1:attribute} PRIMARY KEY(${2:attribute(s)})"],
+    "description": "Constraint rimary Key"
+  },
+  "foreingk": {
+    "prefix": "foreingk",
+    "body": ["FOREIGN KEY(${1:attribute}) REFERENCES ${2:tableName}(${3:attribute})"],
+    "description": "Foreing Key"
+  },
+  "foreingkc": {
+    "prefix": "foreingkc",
+    "body": ["CONSTRAINT ${1:attribute} FOREING KEY (${2:attribute(s)})",
+      "\tREFERENCES ${3:tableName}(${4:attribute})"
+    ],
+    "description": "Constraint foreing Key"
+  },
+  "check": {
+    "prefix": "check",
+    "body": ["CHECK ( ${1:condition} )"],
+    "description": "Check"
+  },
+  "creteuser": {
+    "prefix": "createuser",
+    "body": "CREATE USER '${1:username}'@'${2:localhost}' IDENTIFIED BY '${3:password}';",
+    "description": "Create User"
+  }
+}
