@@ -1,7 +1,7 @@
 {
   "require": {
     "prefix": "req",
-    "body": ["require '${1:module}'"],
+    "body": ["require('${0:module}')"],
     "description": "Require module"
   },
   "return": {
@@ -16,7 +16,7 @@
   },
   "local require": {
     "prefix": "req=",
-    "body": ["local ${0:name} = require '${1:module}'"],
+    "body": ["local ${0:name} = require('${1:module}')"],
     "description": "Require module as a variable"
   },
   "class": {
