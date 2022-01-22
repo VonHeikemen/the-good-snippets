@@ -21,7 +21,7 @@
   },
   "for_i": {
     "prefix": "fori",
-    "body": "for ((${0:i} = 0; ${0:i} < ${1:10}; ${0:i}++)); do\n\techo \"$${0:i}\"\ndone\n",
+    "body": "for ((${1:i} = 0; ${1:i} < ${2:10}; ${1:i}++)); do\n\techo \"$${0:VAR}\"\ndone\n",
     "description": "An index-based iteration for loop."
   },
   "while": {
