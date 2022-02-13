@@ -41,7 +41,7 @@
   },
   "querySelectorAll": {
     "prefix": ["qsa", "document query all"],
-    "body": "document.querySelectorAll('${0:selector}'));"
+    "body": "document.querySelectorAll('${0:selector}');"
   },
   "forEach loop": {
     "prefix": "fore",
