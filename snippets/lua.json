@@ -68,6 +68,10 @@
     "prefix": "fun",
     "body": ["function ${1:name}($2)", "\t${0:-- code}", "end"]
   },
+  "local-function": {
+    "prefix": "lfun",
+    "body": ["local function ${1:name}($2)", "\t${0:-- code}", "end"]
+  },
   "oneline-function": {
     "prefix": "lf",
     "body": ["function($1) ${0} end"]
