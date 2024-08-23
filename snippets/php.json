@@ -18,16 +18,6 @@
       "}"
     ]
   },
-  "function …": {
-    "prefix": "pfun",
-    "body": [
-      "${1:public }function ${2:FunctionName}(${3:${4:${5:Type} }\\$${6:var}${7: = ${8:null}}})",
-      "{",
-      "\t${0:# code...}",
-      "}"
-    ],
-    "description": "Function"
-  },
   "do … while …": {
     "prefix": "do",
     "body": [
