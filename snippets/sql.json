@@ -78,24 +78,34 @@
   },
   "alterdb": {
     "prefix": "alterdb",
-    "body": ["ALTER DATABASE ${1:dbName}", "\tCHARACTER SET ${2:charset}",
+    "body": [
+      "ALTER DATABASE ${1:dbName}", "\tCHARACTER SET ${2:charset}",
       "\tCOLLATE ${3:utf8_unicode_ci};"
     ],
     "description": "Alter database"
   },
   "ijoin": {
     "prefix": "ijoin",
-    "body": "INNER JOIN ${1:tableName2}", "\tON ${0:match};",
+    "body": [
+      "INNER JOIN ${1:tableName2}",
+      "\tON ${0:match};"
+    ],
     "description": "Inner Join"
   },
   "rjoin": {
     "prefix": "rjoin",
-    "body": "RIGHT JOIN ${1:tableName2}", "\tON ${0:match};",
+    "body": [
+      "RIGHT JOIN ${1:tableName2}",
+      "\tON ${0:match};"
+    ],
     "description": "Right Join"
   },
   "ljoin": {
     "prefix": "ljoin",
-    "body": "LEFT JOIN ${1:tableName2}", "\tON ${0:match};",
+    "body": [
+      "LEFT JOIN ${1:tableName2}",
+      "\tON ${0:match};"
+    ],
     "description": "Left Join"
   },
   "fjoin": {
@@ -136,7 +146,8 @@
   },
   "foreingkc": {
     "prefix": "foreingkc",
-    "body": ["CONSTRAINT ${1:attribute} FOREING KEY (${2:attribute(s)})",
+    "body": [
+      "CONSTRAINT ${1:attribute} FOREING KEY (${2:attribute(s)})",
       "\tREFERENCES ${3:tableName}(${4:attribute})"
     ],
     "description": "Constraint foreing Key"
